@@ -1,6 +1,7 @@
 package com.amodsachintha.feedbackapp.models;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -11,8 +12,8 @@ public class Service {
     private Integer id;
     private String description;
 
-    @OneToMany
-    private Set<Feedback> feedbackSet;
+    @OneToMany(mappedBy = "service")
+    private Set<Feedback> feedbackSet = new HashSet<>();
 
     public Integer getId() {
         return id;

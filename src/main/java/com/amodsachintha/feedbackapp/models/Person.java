@@ -1,6 +1,7 @@
 package com.amodsachintha.feedbackapp.models;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -17,8 +18,9 @@ public class Person {
     private String address;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "person")
-    private Set<Feedback> feedbacks;
-    @ManyToOne
+    private Set<Feedback> feedbacks = new HashSet<>();
+
+    @OneToOne
     private Region region;
 
     public Long getId() {

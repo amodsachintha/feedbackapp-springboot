@@ -14,6 +14,7 @@ public class Feedback {
 
     @ManyToOne
     private Person person;
+
     @ManyToOne
     private Service service;
 
