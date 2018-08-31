@@ -12,8 +12,12 @@ public class Service {
     private Integer id;
     private String description;
 
-    @OneToMany(mappedBy = "service")
-    private Set<Feedback> feedbackSet = new HashSet<>();
+    public Service() {
+    }
+
+    public Service(String description) {
+        this.description = description;
+    }
 
     public Integer getId() {
         return id;
@@ -31,11 +35,4 @@ public class Service {
         this.description = description;
     }
 
-    public Set<Feedback> getFeedbackSet() {
-        return feedbackSet;
-    }
-
-    public void setFeedbackSet(Set<Feedback> feedbackSet) {
-        this.feedbackSet = feedbackSet;
-    }
 }

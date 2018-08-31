@@ -23,6 +23,18 @@ public class Person {
     @OneToOne
     private Region region;
 
+    public Person() {
+    }
+
+    public Person(String fName, String lName, String nic, String mobile, String address, Region region) {
+        this.fName = fName;
+        this.lName = lName;
+        this.nic = nic;
+        this.mobile = mobile;
+        this.address = address;
+        this.region = region;
+    }
+
     public Long getId() {
         return id;
     }

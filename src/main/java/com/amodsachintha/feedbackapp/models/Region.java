@@ -10,6 +10,12 @@ public class Region {
     private Integer id;
     private String description;
 
+    public Region() {
+    }
+
+    public Region(String description) {
+        this.description = description;
+    }
 
     public Integer getId() {
         return id;

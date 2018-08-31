@@ -18,6 +18,13 @@ public class Feedback {
     @ManyToOne
     private Service service;
 
+    public Feedback() {
+    }
+
+    public Feedback(String info, Service service) {
+        this.info = info;
+        this.service = service;
+    }
 
     public long getId() {
         return id;
