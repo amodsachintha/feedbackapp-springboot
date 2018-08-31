@@ -11,8 +11,6 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
-import java.util.HashSet;
-import java.util.Set;
 
 
 @Component
@@ -54,6 +52,14 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
         Feedback feedback3 = new Feedback("MMMM",service);
         feedback3.setPerson(person);
         feedbackRepository.save(feedback3);
+
+        Region western = new Region("Western");
+        regionRepository.save(western);
+        Person person1 = new Person("Niran","Peiris","456789","075112354","Piliyandala",western);
+        Feedback feedback4 = new Feedback("Too Late",service);
+        feedback4.setPerson(person1);
+        personRepository.save(person1);
+        feedbackRepository.save(feedback4);
 
     }
 }

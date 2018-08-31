@@ -35,4 +35,11 @@ public class Service {
         this.description = description;
     }
 
+    @Override
+    public String toString() {
+        return "Service{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

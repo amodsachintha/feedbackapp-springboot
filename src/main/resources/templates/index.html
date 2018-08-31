@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Feedback Form</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" href="/css/bootstrap.min.css">
 </head>
 <body>
 <h2>Hello</h2>
+<div class="container">
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>id</th>
+            <th>fname</th>
+            <th>lname</th>
+            <th>mobile</th>
+            <th>address</th>
+        </tr>
+        <tr th:each="person : ${persons}">
+            <td th:text="${person.id}">id</td>
+            <td th:text="${person.fName}">fName</td>
+            <td th:text="${person.lName}">lname</td>
+            <td th:text="${person.mobile}">mobile</td>
+            <td th:text="${person.address}">address</td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>

@@ -57,4 +57,14 @@ public class Feedback {
     public void setService(Service service) {
         this.service = service;
     }
+
+    @Override
+    public String toString() {
+        return "Feedback{" +
+                "id=" + id +
+                ", info='" + info + '\'' +
+                ", person=" + person.toString() +
+                ", service=" + service.toString() +
+                '}';
+    }
 }
