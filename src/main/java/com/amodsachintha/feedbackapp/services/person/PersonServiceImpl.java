@@ -4,7 +4,8 @@ import com.amodsachintha.feedbackapp.models.Person;
 import com.amodsachintha.feedbackapp.repositories.PersonRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Service
 public class PersonServiceImpl implements PersonService {

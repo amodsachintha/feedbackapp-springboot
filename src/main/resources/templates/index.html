@@ -4,26 +4,40 @@
     <meta charset="UTF-8"/>
     <title>Feedback Form</title>
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" href="/css/bootstrap.min.css">
+    <div th:replace="nav.html::nav"></div>
 </head>
 <body>
-<h2>Hello</h2>
 <div class="container">
-    <table class="table table-bordered table-hover">
-        <tr>
-            <th>id</th>
-            <th>fname</th>
-            <th>lname</th>
-            <th>mobile</th>
-            <th>address</th>
-        </tr>
-        <tr th:each="person : ${persons}">
-            <td th:text="${person.id}">id</td>
-            <td th:text="${person.fName}">fName</td>
-            <td th:text="${person.lName}">lname</td>
-            <td th:text="${person.mobile}">mobile</td>
-            <td th:text="${person.address}">address</td>
-        </tr>
-    </table>
+    <div class="row" style="margin-bottom: 30px">
+        <div class="col-md-3 offset-4">
+            <img src="/img/dikwella.jpg" th:src="@{/img/dikwella.jpg}">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <th>id</th>
+                    <th>fname</th>
+                    <th>lname</th>
+                    <th>mobile</th>
+                    <th>address</th>
+                </tr>
+                <tr th:each="person : ${persons}">
+                    <td th:text="${person.id}">id</td>
+                    <td th:text="${person.fName}">fName</td>
+                    <td th:text="${person.lName}">lname</td>
+                    <td th:text="${person.mobile}">mobile</td>
+                    <td th:text="${person.address}">address</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
 </div>
+<script th:src="@{/js/jquery.min.js}" src="/js/jquery.min.js"></script>
+<script th:src="@{/js/popper.min.js}" src="/js/popper.min.js"></script>
+<script th:src="@{/js/bootstrap.min.js}" src="/js/bootstrap.min.js"></script>
 </body>
 </html>

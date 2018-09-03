@@ -1,6 +1,8 @@
 package com.amodsachintha.feedbackapp.models;
 
 import javax.persistence.*;
+import java.time.Instant;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,6 +18,8 @@ public class Person {
     private String nic;
     private String mobile;
     private String address;
+    private Date createdAt;
+    private Date updatedAt;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "person")
     private Set<Feedback> feedbacks = new HashSet<>();
@@ -32,6 +36,19 @@ public class Person {
         this.nic = nic;
         this.mobile = mobile;
         this.address = address;
+        this.region = region;
+        this.createdAt = Date.from(Instant.now());
+        this.updatedAt = Date.from(Instant.now());
+    }
+
+    public Person(String fName, String lName, String nic, String mobile, String address, Date updatedAt, Set<Feedback> feedbacks, Region region) {
+        this.fName = fName;
+        this.lName = lName;
+        this.nic = nic;
+        this.mobile = mobile;
+        this.address = address;
+        this.updatedAt = updatedAt;
+        this.feedbacks = feedbacks;
         this.region = region;
     }
 
@@ -97,6 +114,22 @@ public class Person {
 
     public void setRegion(Region region) {
         this.region = region;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
